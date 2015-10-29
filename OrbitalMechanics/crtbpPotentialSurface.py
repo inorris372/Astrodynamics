@@ -1,5 +1,7 @@
+import matplotlib as mpl
+import matplotlib.cm as cm
 import math
-from matplotlib import pyplot as plt
+from matplotlib.pyplot import *
 import numpy as np
 from CrtbpPotential import potential
 
@@ -36,9 +38,10 @@ U = potential(M1, M2, X, Y)   # calculate potential on grid points
 
 # define a custom, gray color map to render surface plot
 map = np.ones(2, 3)*.7
-fig = plt.figure()
+fig = figure()
 ax = fig.gca(projection='3d')
-np.colormap(map)
+mycmap = cm.ma..to_rgba(map)
+
 surf = ax.plot_surface(X, Y, U, rstride=1, cstride=1, facecolors=C, antialiased=True)
 norm = mpl.colors.Normalize(vmin=-20, vmax=10)
 cmap = cm.hot
@@ -49,14 +52,14 @@ print m.to_rgba(x)
 
 ###########  Left figure will show potential from directly above
 
-plt.subplot(1,2,1)
+subplot(1,2,1)
 
-plt.surf(X,Y,U,'FaceColor','interp','EdgeColor','none','FaceLighting','phong')
+surf(X,Y,U,'FaceColor','interp','EdgeColor','none','FaceLighting','phong')
 
-plt.title('m_1 = %.1f   m_2 = %.1f', M1, M2)
-plt.axis('square')
-plt.axis('equal')
-plt.axis('tight')
+title('m_1 = %.1f   m_2 = %.1f', M1, M2)
+axis('square')
+axis('equal')
+axis('tight')
 #plt.zlim([-3, -1])
 #plt.view(90,90)     # viewing angle straight overhead
 #plt.camlight left
@@ -65,20 +68,19 @@ plt.axis('tight')
 
 ############  Right figure will show potential tilted 30 degrees
 
-plt.subplot(1,2,2)
+subplot(1,2,2)
 
-plt.surf(X,Y,U,'FaceColor','interp','EdgeColor','none','FaceLighting','phong')
+surf(X,Y,U,'FaceColor','interp','EdgeColor','none','FaceLighting','phong')
 
-plt.title('m_1 = %.1f   m_2 = %.1f',M1, M2)
-plt.axis('tight')
-plt.axis('square')
-plt.axis('equal')
+title('m_1 = %.1f   m_2 = %.1f',M1, M2)
+axis('tight')
+axis('square')
+axis('equal')
 #plt.zlim([-3 -1]);
 #plt.view(90,30)     # viewing angle inclined by 30 degrees
 #camlight left
 
-plt.show()
-
+show()
 #############  Print to file
 
 #set(gcf, 'PaperPosition', [0, -.5, 8, 4])
