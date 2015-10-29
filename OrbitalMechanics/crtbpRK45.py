@@ -1,9 +1,13 @@
 import inspect
 import math
+import time
 import Poincare
 import matplotlib.pyplot as plt
 import numpy as np
 import scipy as sp
+from Derivatives import derivatives
+from waitbar import bar
+import scipy.integrate as i
 __author__ = 'Ian'
 
 """ Numerically integrate a test particle in the circularly restricted
@@ -52,66 +56,6 @@ Returned arrays:
 
 def RK45(masses, pos0, vel0i, times, flag):
 
-##########                                                       %%%%%%%%%%
-##########                      Functions                        %%%%%%%%%%
-##########                                                       %%%%%%%%%%
-
-
-    #######  Derivatives  #######
-    #
-    # Function defining derivatives dx/dt and dy/dt
-    # uses the global parameters omega, R10, R20, mu1, mu2 but changeth them not
-    def derivatives(tf,wf):
-
-        R1 = R10
-        R2 = R20
-
-        dvdt = []
-        dvdt[0] = wf(3)
-        dvdt[1] = wf(4)
-
-        X = wf(1)            # x component of ii^th particle
-        Y = wf(2)            # y component of ii^th particle
-
-        r1 = ((X-R1(1))**2 + (Y-R1(2))**2)**(3/2)
-        r2 = ((X-R2(1))**2 + (Y-R2(2))**2)**(3/2)
-
-        dvdt[2] = 2*omega0*wf(4) + omega0**2*wf(1) - mu1 * (X-R1(1)) / r1 - mu2 * (X-R2(1)) / r2
-        dvdt[3] = -2*omega0*wf(3) + omega0**2*wf(2) - mu1 * (Y-R1(2)) / r1 - mu2 * (Y-R2(2)) / r2
-        dvdt = dvdt.transpose()
-        return dvdt
-
-
-
-
-    ########  Rotation  #########
-    #
-    # rotate column matrix containing (x,y)
-    # if dir == 1, rotate forward
-    # if dir == -1, rotate backward
-    def rotation(XYf, tf, dir):
-
-        s = len(XYf)
-        if s(2) > 1
-            XYin = XYf'
-        else
-            XYin = XYf
-
-        tin = tf(len(tf)-1)
-        NP = len(XYin)/2
-        rot = ([math.cos(omega0*tin), -math.sin(omega0*tin)],...
-        [math.sin(omega0*tin), math.cos(omega0*tin)])
-
-        if dir == -1
-            rot = rot'
-
-
-        for ii = 1:NP
-            XYout = (rot * XYin)'
-        return XYout
-
-
-
     ###########  Events - Poincare Section  ############
 
     def events(tin,y,dy):
@@ -124,23 +68,10 @@ def RK45(masses, pos0, vel0i, times, flag):
         return (value, isterminal, direction)
 
 
-
-    #######  OutputFcn1:  Status Bar  #######
-    #
-    # the output function
-    def OutputFcn1(t,y,flag): #ok
-        # don't stop
-        stop = False
-        # only after sucessfull steps
-        if ~isempty(flag), return
-        else
-            wait = waitbar(t(end)/times(end), wait)
-        return stop
-
     (nargin, varargs, keywords, defaults) = inspect.getargspec(RK45)
 
     if nargin < 4:
-        print('crtbpRKN1210 requires at least 4 parameters')
+        print('crtbpRK45 requires at least 4 parameters')
         exit()
 
 
@@ -149,18 +80,12 @@ def RK45(masses, pos0, vel0i, times, flag):
 ##########           Initialization and Parameters               %%%%%%%%%%
 ##########                                                       %%%%%%%%%%
 
-
-
 ###################  Flags Controlling Output  ###################
 
     if nargin >= 5:
         Poincare = flag[0]      # if true, create Poincare section
     else:
         Poincare = False
-
-
-
-
 
 ###################  System Parameters  #############
 
@@ -173,9 +98,8 @@ def RK45(masses, pos0, vel0i, times, flag):
     G = 1            # Gravitational Constant
     R = 1            # distance between M1 and M2 set to 1
 
-
-
 ###################  Orbital properties of two massive bodies  ############
+
     mu = G*M
     mu1 = G*M1
     mu2 = G*M2
@@ -188,13 +112,14 @@ def RK45(masses, pos0, vel0i, times, flag):
 
 
 # calculate velocity components in rotating frame
-    vm = math.sqrt(vel0i(1)**2 + vel0i(2)**2)
-    vxu = vel0i(1)/vm
-    vyu = vel0i(2)/vm
-    vr = omega0 * math.sqrt(pos0(1)**2+pos0(2)**2)
+    vel0 = []
+    vm = math.sqrt(vel0i[0]**2 + vel0i[1]**2)
+    vxu = vel0i[0]/vm
+    vyu = vel0i[1]/vm
+    vr = omega0 * math.sqrt(pos0[0]**2+pos0[1]**2)
     vnew = vm-vr
-    vel0[1] = vxu * vnew
-    vel0[2] = vyu * vnew
+    vel0[0] = vxu * vnew
+    vel0[1] = vyu * vnew
 
 
 
@@ -209,18 +134,24 @@ def RK45(masses, pos0, vel0i, times, flag):
 
 
     if Poincare:
-        options = .odeset('RelTol', 1e-12, 'AbsTol', 1e-12, 'Events',@events,'outputfcn',@OutputFcn1)
+        options = i.ode(OutputFcn1).set_integrator('vode', method='bdf', order=15)
+
+        #options = .odeset('RelTol', 1e-12, 'AbsTol', 1e-12, 'Events',@events,'outputfcn',@OutputFcn1)
     else:
-        options = sp.integrate.odeset('RelTol', 1e-12, 'AbsTol', 1e-12,'outputfcn',@OutputFcn1)
+        options = integrate.ode(OutputFcn1).set_integrator('vode', method='bdf', order=15)
+
+        #options = sp.integrate.odeset('RelTol', 1e-12, 'AbsTol', 1e-12,'outputfcn',@OutputFcn1)
 
 
 # initialize waitbar
-    wait = plt.waitbar(0, 'integrating...')
+    wait = bar(0, 'integrating...')
 
 
 # Use Runge-Kutta-Nystrom integrator to solve the ODE
-    plt.tic
-    [t,q,TE,YE] = ode45(@derivatives, times, [pos0 vel0]', options)
+    tic = time.time()
+    [t,q,TE,YE] = i.odeint(derivatives, pos0, times[0],)
+                           #ode45(@derivatives, times, [pos0 vel0]', options)
+    toc = time.time() - tic
     DT = toc
 
     pos = q[:,0:1]

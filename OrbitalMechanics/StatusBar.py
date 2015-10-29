@@ -1,3 +1,4 @@
+from waitbar import bar
 __author__ = 'Ian'
 
 
@@ -11,5 +12,5 @@ def OutputFcn1(t, y, dy, flag):  # ok
     if not flag:
         return
     else:
-        wait = waitbar(t / tEnd, wait)
+        progress = bar(t / tEnd, wait)
     return stop

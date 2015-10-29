@@ -1,6 +1,7 @@
 import inspect
 import math
 import matplotlib as plt
+from scipy import integrate
 from Derivatives import derivatives
 from Rotation import rotate
 import time
@@ -8,7 +9,7 @@ from StatusBar import OutputFcn1
 from Animation import OutputFcn2
 from LagrangePoints import lpoints
 import numpy as np
-import scipy
+from scipy import *
 from rkn1210 import rkn1210
 __author__ = 'Ian'
 
@@ -55,8 +56,13 @@ __author__ = 'Ian'
 #
 # MATLAB-Monkey.com   10/6/2013
 
+#global variables used in other functions listed below
+
+global mu1, mu2, R10, R20, omega0, plotLimits, LP, leaveTrail, rotatingFrame, animateDelay
 
 def integrator(masses, pos0, vel0, times, flag):
+
+    global mu1, mu2, R10, R20, omega0, plotLimits, LP, leaveTrail, rotatingFrame
     # return returnVals
     (nargin, varargs, keywords, defaults) = inspect.getargspec(integrator)
     if nargin < 4:
@@ -112,7 +118,7 @@ def integrator(masses, pos0, vel0, times, flag):
 
 
 ################  Orbital properties of two massive bodies  ##############
-    global mu1, mu2, R10, R20, omega0, plotLimits, LP
+
 
     mu = G*M
     mu1 = G*M1
@@ -133,9 +139,9 @@ def integrator(masses, pos0, vel0, times, flag):
 
 ###########################   Trail Properties  ###########################
 
-    trail = scipy.ones(trailLength,2*NP)
+    trail = ones(trailLength,2*NP)
     for j in range (0,2*NP-1):
-        trail[:,j] = pos0(j)*scipy.ones(trailLength,1)
+        trail[:,j] = pos0(j)*ones(trailLength,1)
 
 
 ##########                                                       ##########
@@ -147,14 +153,16 @@ def integrator(masses, pos0, vel0, times, flag):
 
 
     if animate:
-        options = scipy.odeset('RelTol', 1e-12, 'AbsTol', 1e-12,'outputfcn',OutputFcn2)
+        #options = scipy.odeset('RelTol', 1e-12, 'AbsTol', 1e-12,'outputfcn',OutputFcn2)
+        options = integrate.ode(OutputFcn2).set_integrator('vode', method='bdf', order=15)
     else:            # initialize waitbar
         if progressBar:
             wait = scipy.waitbar(0, 'integrating...')
-            options = scipy.odeset('RelTol', 1e-12, 'AbsTol', 1e-12,'outputfcn',OutputFcn1)
+            #options = scipy.odeset('RelTol', 1e-12, 'AbsTol', 1e-12,'outputfcn',OutputFcn1)
+            options = integrate.ode(OutputFcn1).set_integrator('vode', method='bdf', order=15)
         else:
-            options = scipy.odeset('RelTol', 1e-12, 'AbsTol', 1e-12)
-
+            #options = scipy.odeset('RelTol', 1e-12, 'AbsTol', 1e-12)
+            options = integrate.ode(OutputFcn1).set_integrator('vode', method='bdf', order=15)
 
 
 # Use Runge-Kutta-Nystrom integrator to solve the ODE

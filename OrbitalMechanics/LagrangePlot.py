@@ -1,7 +1,7 @@
 from LagrangePoints import lpoints
 from CrtbpPotential import potential
+from crtbpZeroVel import X, Y, U, mu1, mu2
 import matplotlib.pyplot as plt
-import math
 
 __author__ = 'Ian'
 
@@ -26,14 +26,14 @@ M1 = 1       # mass 1
 M2 = 0.1     # mass 2
 M = M1 + M2  # total mass
 
-P = 2*math.pi * math.sqrt(R**3 / mu)   # period from Kepler's 3rd law
-omega0 = 2*math.pi/P            # angular velocity of massive bodies
+#P = 2*math.pi * math.sqrt(R**3 / mu)   # period from Kepler's 3rd law
+#omega0 = 2*math.pi/P            # angular velocity of massive bodies
 
 # find Lagrange points and the pseudo-potential
 LP = lpoints(M2/(M1+M2))
-LP1_level = potential(mu1, mu2, LP(1,1), LP(1,2))
-LP2_level = potential(mu1, mu2, LP(2,1), LP(2,2))
-LP3_level = potential(mu1, mu2, LP(3,1), LP(3,2))
+LP1_level = potential(mu1, mu2, LP[0,0], LP[0,1])
+LP2_level = potential(mu1, mu2, LP[1,0], LP[1,1])
+LP3_level = potential(mu1, mu2, LP[2,0], LP[2,1])
 
 
 
@@ -61,6 +61,6 @@ plt.axis('equal')
 plt.axis([-1.8, 1.8, -1.8, 1.8])
 
 # print plot to file
-set(gcf, 'PaperPosition', [0, 0, 5, 5])
+#set(gcf, 'PaperPosition', [0, 0, 5, 5])
 print ('-dpdf','Lagrange.pdf')
 print ('-dpng','Lagrange.png','-r100')

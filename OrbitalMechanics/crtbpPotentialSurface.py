@@ -39,8 +39,13 @@ map = np.ones(2, 3)*.7
 fig = plt.figure()
 ax = fig.gca(projection='3d')
 np.colormap(map)
-surf = ax.plot_surface(X, Y, Z, rstride=1, cstride=1, facecolors=C, antialiased=True)
+surf = ax.plot_surface(X, Y, U, rstride=1, cstride=1, facecolors=C, antialiased=True)
+norm = mpl.colors.Normalize(vmin=-20, vmax=10)
+cmap = cm.hot
+x = 0.3
 
+m = cm.ScalarMappable(norm=norm, cmap=cmap)
+print m.to_rgba(x)
 
 ###########  Left figure will show potential from directly above
 
@@ -76,6 +81,6 @@ plt.show()
 
 #############  Print to file
 
-set(gcf, 'PaperPosition', [0, -.5, 8, 4])
+#set(gcf, 'PaperPosition', [0, -.5, 8, 4])
 print ('-dpdf','potential.pdf')
 print ('-dpng','potential.png','-r100')
