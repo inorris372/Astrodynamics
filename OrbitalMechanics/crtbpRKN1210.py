@@ -1,6 +1,5 @@
 import inspect
-import math
-import matplotlib as plt
+from StatusBar import OutputFcn1 as out1
 from scipy import integrate
 from Derivatives import derivatives
 from Rotation import rotate
@@ -8,9 +7,10 @@ import time
 from StatusBar import OutputFcn1
 from Animation import OutputFcn2
 from LagrangePoints import lpoints
-import numpy as np
 from scipy import *
 from rkn1210 import rkn1210
+from waitbar import bar
+
 __author__ = 'Ian'
 
 # Numerically integrate a test particle in the circularly restricted
@@ -56,13 +56,13 @@ __author__ = 'Ian'
 #
 # MATLAB-Monkey.com   10/6/2013
 
-#global variables used in other functions listed below
+# global variables used in other functions listed below
 
-global mu1, mu2, R10, R20, omega0, plotLimits, LP, leaveTrail, rotatingFrame, animateDelay
+global tEnd, wait, mu1, mu2, R10, R20, omega0, plotLimits, LP, leaveTrail, rotatingFrame, animateDelay
+
 
 def integrator(masses, pos0, vel0, times, flag):
-
-    global mu1, mu2, R10, R20, omega0, plotLimits, LP, leaveTrail, rotatingFrame
+    global tEnd, wait, mu1, mu2, R10, R20, omega0, plotLimits, LP, leaveTrail, rotatingFrame
     # return returnVals
     (nargin, varargs, keywords, defaults) = inspect.getargspec(integrator)
     if nargin < 4:
@@ -71,111 +71,114 @@ def integrator(masses, pos0, vel0, times, flag):
 
 
 
-##########                                                       ##########
-##########           Initialization and Parameters               ##########
-##########                                                       ##########
+    ##########                                                       ##########
+    ##########           Initialization and Parameters               ##########
+    ##########                                                       ##########
 
 
 
-####################  Flags Controlling Output  ###########################
+    ####################  Flags Controlling Output  ###########################
     animate = False
     rotatingFrame = False
 
     if nargin >= 5:
         rotatingFrame = flag(1)  # if true, transform to rotating frame
-                                 # if false, display inertial frame
+        # if false, display inertial frame
 
-        animate = flag(2)        # if true, animate motion
-                                 # if false, just display final trajectory
+        animate = flag(2)  # if true, animate motion
+        # if false, just display final trajectory
 
-        leaveTrail = flag(3)     # if true and animation is on, past positions will
-                                 # not be erased.  If false and animation is on,
-                                 # no 'trail' of past positions will be left
+        leaveTrail = flag(3)  # if true and animation is on, past positions will
+        # not be erased.  If false and animation is on,
+        # no 'trail' of past positions will be left
 
-    progressBar = False     # if true, show progress bar
+    progressBar = False  # if true, show progress bar
 
-    animateDelay = 0.0      # delay (in seconds) between frames of animation.
-                            # smaller the value, faster the animation will play
+    animateDelay = 0.0  # delay (in seconds) between frames of animation.
+    # smaller the value, faster the animation will play
 
-    leaveTrail = flag(3)    # if true and animation is on, past positions will
-                            # not be erased.  If false and animation is on,
-                            # no 'trail' of past positions will be left
+    leaveTrail = flag(3)  # if true and animation is on, past positions will
+    # not be erased.  If false and animation is on,
+    # no 'trail' of past positions will be left
 
-    trailLength = 700       # if leaveTrail is true, this sets the length of
-                            # trail
+    trailLength = 700  # if leaveTrail is true, this sets the length of
+    # trail
 
-#########################  System Parameters  ############################
+    #########################  System Parameters  ############################
 
 
-    NP = len(pos0)/2  # number of test particles.  Assumes 2D
+    NP = len(pos0) / 2  # number of test particles.  Assumes 2D
 
-    M1 = masses(1)   # mass 1
+    M1 = masses(1)  # mass 1
     M2 = masses(2)  # mass 2
-    M = M1 + M2     # total mass
+    M = M1 + M2  # total mass
 
-    G = 1           # Gravitational Constant
-    R = 1           # distance between M1 and M2 set to 1
-
-
-################  Orbital properties of two massive bodies  ##############
+    G = 1  # Gravitational Constant
+    R = 1  # distance between M1 and M2 set to 1
 
 
-    mu = G*M
-    mu1 = G*M1
-    mu2 = G*M2
-
-    R10 = ([-M2/M],[0])           # initial position of M1
-    R20 = ([M1/M],[0])            # initial position of M2
-
-    P = 2*math.pi * math.sqrt(R**3 / mu)  # period from Kepler's 3rd law
-    omega0 = 2*math.pi/P            # angular velocity of massive bodies
-
-    plotLimits = 1.5           # limit for plotting
-    tEnd = times(len(times)-1)
+    ################  Orbital properties of two massive bodies  ##############
 
 
-    LP = lpoints(M2/M)  # calculate Lagrange points
+    mu = G * M
+    mu1 = G * M1
+    mu2 = G * M2
+
+    R10 = ([-M2 / M], [0])  # initial position of M1
+    R20 = ([M1 / M], [0])  # initial position of M2
+
+    P = 2 * math.pi * math.sqrt(R ** 3 / mu)  # period from Kepler's 3rd law
+    omega0 = 2 * math.pi / P  # angular velocity of massive bodies
+
+    plotLimits = 1.5  # limit for plotting
+    tEnd = times(len(times) - 1)
+
+    LP = lpoints(M2 / M)  # calculate Lagrange points
 
 
-###########################   Trail Properties  ###########################
+    ###########################   Trail Properties  ###########################
 
-    trail = ones(trailLength,2*NP)
-    for j in range (0,2*NP-1):
-        trail[:,j] = pos0(j)*ones(trailLength,1)
-
-
-##########                                                       ##########
-##########                      Integrate                        ##########
-##########                                                       ##########
+    trail = ones(trailLength, 2 * NP)
+    for j in range(0, 2 * NP - 1):
+        trail[:, j] = pos0(j) * ones(trailLength, 1)
 
 
-# Use Runge-Kutta 45 integrator to solve the ODE
+    ##########                                                       ##########
+    ##########                      Integrate                        ##########
+    ##########                                                       ##########
 
 
+    # Use Runge-Kutta 45 integrator to solve the ODE
+
+    # initialize wait variable
+    wait = True
+    options = integrate.ode
     if animate:
-        #options = scipy.odeset('RelTol', 1e-12, 'AbsTol', 1e-12,'outputfcn',OutputFcn2)
+        # options = scipy.odeset('RelTol', 1e-12, 'AbsTol', 1e-12,'outputfcn',OutputFcn2)
         options = integrate.ode(OutputFcn2).set_integrator('vode', method='bdf', order=15)
-    else:            # initialize waitbar
+    else:  # initialize waitbar
         if progressBar:
-            wait = scipy.waitbar(0, 'integrating...')
-            #options = scipy.odeset('RelTol', 1e-12, 'AbsTol', 1e-12,'outputfcn',OutputFcn1)
-            options = integrate.ode(OutputFcn1).set_integrator('vode', method='bdf', order=15)
+            while (wait):
+                w = bar(0, 'integrating...')
+                wait = out1(0, 0, 0, w)
+                # options = scipy.odeset('RelTol', 1e-12, 'AbsTol', 1e-12,'outputfcn',OutputFcn1)
+                options = integrate.ode(OutputFcn1).set_integrator('vode', method='bdf', order=15)
         else:
-            #options = scipy.odeset('RelTol', 1e-12, 'AbsTol', 1e-12)
+            # options = scipy.odeset('RelTol', 1e-12, 'AbsTol', 1e-12)
             options = integrate.ode(OutputFcn1).set_integrator('vode', method='bdf', order=15)
 
 
-# Use Runge-Kutta-Nystrom integrator to solve the ODE
+        # Use Runge-Kutta-Nystrom integrator to solve the ODE
     tic = time.time()
-# [t,pos,vel] = rkn1210(@derivatives, times, pos0, vel0, options)
+    # [t,pos,vel] = rkn1210(@derivatives, times, pos0, vel0, options)
     [t, pos, vel, te, ye] = rkn1210(derivatives, times, pos0, vel0, options)
     toc = time.time() - tic
     DT = toc
 
     if rotatingFrame:
-        for j in range (0,len(t)-1):
-            pos[j,:] = rotate(pos[j,:].transpose(),t(j),-1)
+        for j in range(0, len(t) - 1):
+            pos[j, :] = rotate(pos[j, :].transpose(), t(j), -1)
 
 
-# returnVals = [t, pos, vel, YE]
+        # returnVals = [t, pos, vel, YE]
     return [t, pos, vel]

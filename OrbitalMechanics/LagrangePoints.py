@@ -13,7 +13,6 @@ def lpoints(mu):
     # Each point is a column in a matrix with three rows.  The first column is
     # L1, the second L2, and so on to the last which is L5.
 
-
     # Compute the location of the libration points
 
     l = 1 - mu

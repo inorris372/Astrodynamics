@@ -93,7 +93,7 @@ flags = (rotatingFlag, animateFlag, trailFlag)  # plotting flags
 
 #  Integrate
 
-vals = integrator([M1, M2], {x0, y0}, [vx0, vy0], times, flags)
+vals = integrator([M1, M2], [x0, y0], [vx0, vy0], times, flags)
 # extract time, positions and velocities of test particle(s)
 t = vals[:,0]
 pos = vals[:,1:2*NP]

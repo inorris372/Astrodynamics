@@ -1,4 +1,5 @@
 from waitbar import bar
+from crtbpRKN1210 import tEnd, wait
 __author__ = 'Ian'
 
 
@@ -10,7 +11,7 @@ def OutputFcn1(t, y, dy, flag):  # ok
     stop = False
     # only after sucessfull steps
     if not flag:
-        return
+        stop = True
     else:
-        progress = bar(t / tEnd, wait)
+        bar(t / tEnd, wait)
     return stop

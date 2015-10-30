@@ -1,7 +1,5 @@
-import matplotlib as mpl
-import matplotlib.cm as cm
 import math
-from matplotlib.pyplot import *
+from matplotlib import pyplot as plt
 import numpy as np
 from CrtbpPotential import potential
 
@@ -36,51 +34,55 @@ X,Y = np.meshgrid(x,y)    # grid of (x,y) coordinates
 U = potential(M1, M2, X, Y)   # calculate potential on grid points
 
 
-# define a custom, gray color map to render surface plot
-map = np.ones(2, 3)*.7
-fig = figure()
-ax = fig.gca(projection='3d')
-mycmap = cm.ma..to_rgba(map)
+# define a custom, green color map to render surface plot
 
-surf = ax.plot_surface(X, Y, U, rstride=1, cstride=1, facecolors=C, antialiased=True)
-norm = mpl.colors.Normalize(vmin=-20, vmax=10)
-cmap = cm.hot
+map = np.ones(2, 3)*.7
+
+fig = plt.figure()
+ax = plt.axes(projection='3d')
+norm = plt.Normalize()
+color = plt.cm.ScalarMappable(norm(map))
+surf = ax.plot_surface(X, Y, U,linewidth = 0.3, rstride=1, cstride=1, facecolors= color, antialiased=True, alpha = 0)
+
 x = 0.3
 
-m = cm.ScalarMappable(norm=norm, cmap=cmap)
-print m.to_rgba(x)
+#m = cm.ScalarMappable(norm=norm, cmap=)
+
 
 ###########  Left figure will show potential from directly above
 
-subplot(1,2,1)
+plt.subplot(1,2,1)
 
 surf(X,Y,U,'FaceColor','interp','EdgeColor','none','FaceLighting','phong')
 
-title('m_1 = %.1f   m_2 = %.1f', M1, M2)
-axis('square')
-axis('equal')
-axis('tight')
-#plt.zlim([-3, -1])
-#plt.view(90,90)     # viewing angle straight overhead
-#plt.camlight left
+plt.title('m_1 = %.1f   m_2 = %.1f', M1, M2)
+plt.axis('square')
+plt.axis('equal')
+plt.axis('tight')
+ax.view(90,90) # viewing angler straight overhead
 
+fig.savefig("potentialTopView.jpeg")
+#plt.zlim([-3, -1])
+#plt.camlight left
+plt.show()
 
 
 ############  Right figure will show potential tilted 30 degrees
 
-subplot(1,2,2)
+plt.subplot(1,2,2)
 
 surf(X,Y,U,'FaceColor','interp','EdgeColor','none','FaceLighting','phong')
 
-title('m_1 = %.1f   m_2 = %.1f',M1, M2)
-axis('tight')
-axis('square')
-axis('equal')
+plt.title('m_1 = %.1f   m_2 = %.1f',M1, M2)
+plt.axis('tight')
+plt.axis('square')
+plt.axis('equal')
 #plt.zlim([-3 -1]);
-#plt.view(90,30)     # viewing angle inclined by 30 degrees
+ax.view(90,30)     # viewing angle inclined by 30 degrees
+fig.savefig("potential30DegTilt.jpeg")
 #camlight left
 
-show()
+plt.show()
 #############  Print to file
 
 #set(gcf, 'PaperPosition', [0, -.5, 8, 4])

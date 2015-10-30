@@ -1,12 +1,9 @@
 import inspect
 import math
 import time
-import Poincare
-import matplotlib.pyplot as plt
-import numpy as np
-import scipy as sp
 from Derivatives import derivatives
 from waitbar import bar
+from StatusBar import OutputFcn1 as out1
 import scipy.integrate as i
 __author__ = 'Ian'
 
@@ -56,7 +53,7 @@ Returned arrays:
 
 def RK45(masses, pos0, vel0i, times, flag):
 
-    ###########  Events - Poincare Section  ############
+    # ---------  Events - Poincare Section  --------- #
 
     def events(tin,y,dy):
         # Locate the time when y1 passes through zero in an
@@ -125,35 +122,38 @@ def RK45(masses, pos0, vel0i, times, flag):
 
 
 
-##########                                                       %%%%%%%%%%
-##########                      Integrate                        %%%%%%%%%%
-##########                                                       %%%%%%%%%%
+# --------                                                       -------- #
+# --------                      Integrate                        -------- #
+# --------                                                       -------- #
 
 
 # Use Runge-Kutta 45 integrator to solve the ODE
 
 
     if Poincare:
-        options = i.ode(OutputFcn1).set_integrator('vode', method='bdf', order=15)
+        options = i.ode(out1).set_integrator('vode', method='bdf', order=15)
 
-        #options = .odeset('RelTol', 1e-12, 'AbsTol', 1e-12, 'Events',@events,'outputfcn',@OutputFcn1)
+        # options = .odeset('RelTol', 1e-12, 'AbsTol', 1e-12, 'Events',@events,'outputfcn',@OutputFcn1)
     else:
-        options = integrate.ode(OutputFcn1).set_integrator('vode', method='bdf', order=15)
+        options = i.ode(out1).set_integrator('vode', method='bdf', order=15)
 
-        #options = sp.integrate.odeset('RelTol', 1e-12, 'AbsTol', 1e-12,'outputfcn',@OutputFcn1)
+        # options = sp.integrate.odeset('RelTol', 1e-12, 'AbsTol', 1e-12,'outputfcn',@OutputFcn1)
 
 
 # initialize waitbar
-    wait = bar(0, 'integrating...')
+    wait = True
+    while (wait):
+                w = bar(0, 'integrating...')
+                wait = out1(0, 0, 0, w)
 
 
 # Use Runge-Kutta-Nystrom integrator to solve the ODE
     tic = time.time()
-    [t,q,TE,YE] = i.odeint(derivatives, pos0, times[0],)
+    [t, q, TE, YE] = i.odeint(derivatives, pos0, times[0],
                            #ode45(@derivatives, times, [pos0 vel0]', options)
     toc = time.time() - tic
     DT = toc
 
-    pos = q[:,0:1]
-    vel = q[:,2:3]
+    pos = q[:, 0:1]
+    vel = q[:, 2:3]
     return (t, pos, vel, YE)
