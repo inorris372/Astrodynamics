@@ -1,0 +1,72 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   OrbitalMechanics/.idea/workspace.xml
+#	new file:   OrbitalMechanics/OrbitalMechanics/.idea/OrbitalMechanics.iml
+#	new file:   OrbitalMechanics/OrbitalMechanics/.idea/misc.xml
+#	new file:   OrbitalMechanics/OrbitalMechanics/.idea/modules.xml
+#	new file:   OrbitalMechanics/OrbitalMechanics/.idea/vcs.xml
+#	new file:   OrbitalMechanics/OrbitalMechanics/.idea/workspace.xml
+#	new file:   OrbitalMechanics/OrbitalMechanics/Animation.py
+#	new file:   OrbitalMechanics/OrbitalMechanics/Crtbp.py
+#	new file:   OrbitalMechanics/OrbitalMechanics/CrtbpPotential.py
+#	new file:   OrbitalMechanics/OrbitalMechanics/Derivatives.py
+#	new file:   OrbitalMechanics/OrbitalMechanics/LagrangePlot.py
+#	new file:   OrbitalMechanics/OrbitalMechanics/LagrangePoints.py
+#	new file:   OrbitalMechanics/OrbitalMechanics/Lyapunov.py
+#	new file:   OrbitalMechanics/OrbitalMechanics/Poincare.py
+#	new file:   OrbitalMechanics/OrbitalMechanics/Rotation.py
+#	new file:   OrbitalMechanics/OrbitalMechanics/StatusBar.py
+#	new file:   OrbitalMechanics/OrbitalMechanics/__pycache__/Animation.cpython-34.pyc
+#	new file:   OrbitalMechanics/OrbitalMechanics/__pycache__/CrtbpPotential.cpython-34.pyc
+#	new file:   OrbitalMechanics/OrbitalMechanics/__pycache__/Derivatives.cpython-34.pyc
+#	new file:   OrbitalMechanics/OrbitalMechanics/__pycache__/LagrangePoints.cpython-34.pyc
+#	new file:   OrbitalMechanics/OrbitalMechanics/__pycache__/LagrangePoints.cpython-35.pyc
+#	new file:   OrbitalMechanics/OrbitalMechanics/__pycache__/Rotation.cpython-34.pyc
+#	new file:   OrbitalMechanics/OrbitalMechanics/__pycache__/StatusBar.cpython-34.pyc
+#	new file:   OrbitalMechanics/OrbitalMechanics/__pycache__/crtbpRKN1210.cpython-34.pyc
+#	new file:   OrbitalMechanics/OrbitalMechanics/__pycache__/crtbpZeroVel.cpython-34.pyc
+#	new file:   OrbitalMechanics/OrbitalMechanics/__pycache__/waitbar.cpython-34.pyc
+#	new file:   OrbitalMechanics/OrbitalMechanics/crtbpPotentialSurface.py
+#	new file:   OrbitalMechanics/OrbitalMechanics/crtbpRK45.py
+#	new file:   OrbitalMechanics/OrbitalMechanics/crtbpRKN1210.py
+#	new file:   OrbitalMechanics/OrbitalMechanics/crtbpZeroVel.py
+#	new file:   OrbitalMechanics/OrbitalMechanics/rkn1210.py
+#	new file:   OrbitalMechanics/OrbitalMechanics/waitbar.py
+#	new file:   OrbitalMechanics/Readme.txt
+#	new file:   OrbitalMechanics/crtbpArchive/LagrangePlot.m
+#	new file:   OrbitalMechanics/crtbpArchive/LagrangePoints.m
+#	new file:   OrbitalMechanics/crtbpArchive/Lyapunov.m
+#	new file:   OrbitalMechanics/crtbpArchive/Poincare.m
+#	new file:   OrbitalMechanics/crtbpArchive/README.pdf
+#	new file:   OrbitalMechanics/crtbpArchive/__MACOSX/._LagrangePlot.m
+#	new file:   OrbitalMechanics/crtbpArchive/__MACOSX/._LagrangePoints.m
+#	new file:   OrbitalMechanics/crtbpArchive/__MACOSX/._Lyapunov.m
+#	new file:   OrbitalMechanics/crtbpArchive/__MACOSX/._Poincare.m
+#	new file:   OrbitalMechanics/crtbpArchive/__MACOSX/._crtbp.m
+#	new file:   OrbitalMechanics/crtbpArchive/__MACOSX/._crtbpPotential.m
+#	new file:   OrbitalMechanics/crtbpArchive/__MACOSX/._crtbpPotentialSurface.m
+#	new file:   OrbitalMechanics/crtbpArchive/__MACOSX/._crtbpRK45.m
+#	new file:   OrbitalMechanics/crtbpArchive/__MACOSX/._crtbpRKN1210.m
+#	new file:   OrbitalMechanics/crtbpArchive/__MACOSX/._crtbpZeroVel.m
+#	new file:   OrbitalMechanics/crtbpArchive/__MACOSX/._rkn1210.m
+#	new file:   OrbitalMechanics/crtbpArchive/crtbp.m
+#	new file:   OrbitalMechanics/crtbpArchive/crtbpPotential.m
+#	new file:   OrbitalMechanics/crtbpArchive/crtbpPotentialSurface.m
+#	new file:   OrbitalMechanics/crtbpArchive/crtbpRK45.m
+#	new file:   OrbitalMechanics/crtbpArchive/crtbpRKN1210.m
+#	new file:   OrbitalMechanics/crtbpArchive/crtbpZeroVel.m
+#	new file:   OrbitalMechanics/crtbpArchive/rkn1210.m
+#	modified:   OrbitalMechanics/crtbpRK45.py
+#	modified:   OrbitalMechanics/rkn1210.py
+This will be the python file that must be run in order to setup the MATLAB engine for the ODE used in multiple functions.
+#	new file:   OrbitalMechanics/setup.py
+#
+# Changes not staged for commit:
+#	modified:   OrbitalMechanics/.idea/workspace.xml
+#
+

@@ -5,9 +5,6 @@ from Derivatives import derivatives
 from waitbar import bar
 from StatusBar import OutputFcn1 as out1
 import scipy.integrate as i
-import matlab.engine
-import numpy as np
-
 __author__ = 'Ian'
 
 """ Numerically integrate a test particle in the circularly restricted
@@ -152,8 +149,8 @@ def RK45(masses, pos0, vel0i, times, flag):
 
 # Use Runge-Kutta-Nystrom integrator to solve the ODE
     tic = time.time()
-    eng = matlab.engine.start_matlab('-nojvm')
-    [t, q, TE, YE] = eng.ode45(derivatives, times, np.array([pos0, vel0]).transpose(), options)
+    [t, q, TE, YE] = i.odeint(derivatives, pos0, times[0],
+                           #ode45(@derivatives, times, [pos0 vel0]', options)
     toc = time.time() - tic
     DT = toc
 
