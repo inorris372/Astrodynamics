@@ -1,6 +1,7 @@
 import math
 from crtbpRKN1210 import integrator
 from LagrangePoints import lpoints
+import numpy as np
 
 __author__ = 'Ian'
 
@@ -93,7 +94,7 @@ flags = (rotatingFlag, animateFlag, trailFlag)  # plotting flags
 
 #  Integrate
 
-vals = integrator([M1, M2], [x0, y0], [vx0, vy0], times, flags)
+vals = integrator(np.array([M1, M2]), np.array([x0, y0]), np.array([vx0, vy0]), times, flags)
 # extract time, positions and velocities of test particle(s)
 t = vals[:,0]
 pos = vals[:,1:2*NP]

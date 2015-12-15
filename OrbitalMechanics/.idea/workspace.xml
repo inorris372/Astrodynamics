@@ -2,53 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe3e1da1-a2cd-4e11-9bf1-39e975b5c6ed" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crtbpArchive/__MACOSX/._LagrangePlot.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crtbpArchive/__MACOSX/._LagrangePoints.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crtbpArchive/__MACOSX/._Lyapunov.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crtbpArchive/__MACOSX/._Poincare.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crtbpArchive/__MACOSX/._crtbp.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crtbpArchive/__MACOSX/._crtbpPotential.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crtbpArchive/__MACOSX/._crtbpPotentialSurface.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crtbpArchive/__MACOSX/._crtbpRK45.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crtbpArchive/__MACOSX/._crtbpRKN1210.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crtbpArchive/__MACOSX/._crtbpZeroVel.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crtbpArchive/__MACOSX/._rkn1210.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crtbpArchive/README.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrbitalMechanics/Animation.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrbitalMechanics/Crtbp.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrbitalMechanics/CrtbpPotential.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrbitalMechanics/Derivatives.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crtbpArchive/LagrangePlot.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrbitalMechanics/LagrangePlot.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crtbpArchive/LagrangePoints.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrbitalMechanics/LagrangePoints.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crtbpArchive/Lyapunov.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrbitalMechanics/Lyapunov.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrbitalMechanics/.idea/OrbitalMechanics.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crtbpArchive/Poincare.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrbitalMechanics/Poincare.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrbitalMechanics/Rotation.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrbitalMechanics/StatusBar.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crtbpArchive/crtbp.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crtbpArchive/crtbpPotential.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crtbpArchive/crtbpPotentialSurface.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrbitalMechanics/crtbpPotentialSurface.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crtbpArchive/crtbpRK45.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrbitalMechanics/crtbpRK45.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crtbpArchive/crtbpRKN1210.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrbitalMechanics/crtbpRKN1210.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crtbpArchive/crtbpZeroVel.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrbitalMechanics/crtbpZeroVel.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrbitalMechanics/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrbitalMechanics/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crtbpArchive/rkn1210.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrbitalMechanics/rkn1210.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/setup.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrbitalMechanics/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrbitalMechanics/waitbar.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrbitalMechanics/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crtbpRK45.py" afterPath="$PROJECT_DIR$/crtbpRK45.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Crtbp.py" afterPath="$PROJECT_DIR$/Crtbp.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LagrangePoints.py" afterPath="$PROJECT_DIR$/LagrangePoints.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/OrbitalMechanics.iml" afterPath="$PROJECT_DIR$/.idea/OrbitalMechanics.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StatusBar.py" afterPath="$PROJECT_DIR$/StatusBar.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crtbpRKN1210.py" afterPath="$PROJECT_DIR$/crtbpRKN1210.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rkn1210.py" afterPath="$PROJECT_DIR$/rkn1210.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -70,7 +29,66 @@
     <favorites_list name="OrbitalMechanics" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="Crtbp.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Crtbp.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="96" column="48" selection-start-line="96" selection-start-column="48" selection-end-line="96" selection-end-column="48" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="crtbpRKN1210.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crtbpRKN1210.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="189" column="0" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StatusBar.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/StatusBar.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rkn1210.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/rkn1210.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8062678">
+              <caret line="971" column="31" selection-start-line="971" selection-start-column="31" selection-end-line="971" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LagrangePoints.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LagrangePoints.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -94,18 +112,19 @@
         <option value="$PROJECT_DIR$/Rotation.py" />
         <option value="$PROJECT_DIR$/crtbpPotentialSurface.py" />
         <option value="$PROJECT_DIR$/waitbar.py" />
-        <option value="$PROJECT_DIR$/StatusBar.py" />
-        <option value="$PROJECT_DIR$/crtbpRKN1210.py" />
         <option value="$PROJECT_DIR$/LagrangePlot.py" />
-        <option value="$PROJECT_DIR$/Crtbp.py" />
         <option value="$PROJECT_DIR$/crtbpZeroVel.py" />
-        <option value="$PROJECT_DIR$/LagrangePoints.py" />
         <option value="$PROJECT_DIR$/Finish.py" />
         <option value="$PROJECT_DIR$/Detect.py" />
         <option value="$PROJECT_DIR$/Grow.py" />
         <option value="$PROJECT_DIR$/crtbpRK45.py" />
-        <option value="$PROJECT_DIR$/rkn1210.py" />
         <option value="$PROJECT_DIR$/setup.py" />
+        <option value="$PROJECT_DIR$/StatusBar.py" />
+        <option value="$USER_HOME$/Downloads/WinPython-64bit-3.4.3.6/python-3.4.3.amd64/Lib/site-packages/matlab/engine/__init__.py" />
+        <option value="$PROJECT_DIR$/LagrangePoints.py" />
+        <option value="$PROJECT_DIR$/Crtbp.py" />
+        <option value="$PROJECT_DIR$/crtbpRKN1210.py" />
+        <option value="$PROJECT_DIR$/rkn1210.py" />
       </list>
     </option>
   </component>
@@ -113,9 +132,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="780" />
-    <option name="height" value="735" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -140,6 +160,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -161,17 +182,16 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/WinPython-64bit-3.3.5.9/python-3.3.5.amd64/python.exe" />
     <property name="FullScreen" value="false" />
     <property name="recentsLimit" value="5" />
   </component>
-  <component name="RunManager" selected="Python.LagrangePlot">
+  <component name="RunManager" selected="Python.Crtbp">
     <configuration default="false" name="Crtbp" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -334,8 +354,8 @@
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.LagrangePlot" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Crtbp" />
+        <item index="0" class="java.lang.String" itemvalue="Python.Crtbp" />
+        <item index="1" class="java.lang.String" itemvalue="Python.LagrangePlot" />
       </list>
     </recent_temporary>
   </component>
@@ -432,28 +452,28 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="780" height="735" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19946092" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.110119045" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33333334" sideWeight="0.5051395" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33333334" sideWeight="0.4948605" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33865815" sideWeight="0.4948605" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39869282" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -494,13 +514,68 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/LagrangePoints.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Crtbp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="96" column="48" selection-start-line="96" selection-start-column="48" selection-end-line="96" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crtbpRKN1210.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="189" column="0" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StatusBar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rkn1210.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LagrangePoints.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/crtbpRK45.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="138" column="9" selection-start-line="138" selection-start-column="9" selection-end-line="138" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#14#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -515,9 +590,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#14#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -546,9 +618,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#14#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -584,9 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#14#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -622,9 +688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#14#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -660,9 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#14#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -736,31 +796,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StatusBar.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.029565217">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LagrangePoints.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Animation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36643836">
           <caret line="20" column="54" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Crtbp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="96" column="14" selection-start-line="96" selection-start-column="12" selection-end-line="96" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -778,13 +817,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crtbpRKN1210.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6018018">
-          <caret line="177" column="20" selection-start-line="177" selection-start-column="18" selection-end-line="177" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crtbpZeroVel.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
@@ -796,19 +828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#14#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rkn1210.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3495652">
-          <caret line="898" column="47" selection-start-line="898" selection-start-column="47" selection-end-line="898" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#14#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -817,7 +836,69 @@
         <state vertical-scroll-proportion="0.15652174">
           <caret line="8" column="73" selection-start-line="8" selection-start-column="73" selection-end-line="8" selection-end-column="73" />
           <folding>
-            <element signature="e#33#65#0" expanded="true" />
+            <element signature="e#33#65#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/WinPython-64bit-3.4.3.6/python-3.4.3.amd64/Lib/site-packages/matlab/engine/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6208696">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/WinPython-64bit-3.3.5.9/python-3.3.5.amd64/Lib/site-packages/numpy/lib/polynomial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33153638">
+          <caret line="219" column="0" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Crtbp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="96" column="48" selection-start-line="96" selection-start-column="48" selection-end-line="96" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LagrangePoints.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StatusBar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crtbpRKN1210.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="189" column="0" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rkn1210.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8062678">
+          <caret line="971" column="31" selection-start-line="971" selection-start-column="31" selection-end-line="971" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>

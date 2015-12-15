@@ -1,5 +1,4 @@
 import math
-import scipy
 import numpy as np
 
 __author__ = 'Ian'
@@ -17,11 +16,11 @@ def lpoints(mu):
 
     l = 1 - mu
 
-    LP = scipy.zeros(5, 3)
+    LP = np.zeros((5, 3), dtype = np.complex_)
 
     # L1
-    p_L1 = {1, 2 * (mu - l), l ** 2 - 4 * l * mu + mu ** 2, 2 * mu * l * (l - mu) + mu - l,
-            mu ** 2 * l ** 2 + 2 * (l ** 2 + mu ** 2), mu ** 3 - l ** 3}
+    p_L1 = [1, 2 * (mu - l), l ** 2 - 4 * l * mu + mu ** 2, 2 * mu * l * (l - mu) + mu - l,
+            mu ** 2 * l ** 2 + 2 * (l ** 2 + mu ** 2), mu ** 3 - l ** 3]
     L1roots = np.roots(p_L1)
     # initialize L1 for loop
     L1 = 0
@@ -33,8 +32,8 @@ def lpoints(mu):
 
 
     # L2
-    p_L2 = {1, 2 * (mu - l), l ** 2 - 4 * l * mu + mu ** 2, 2 * mu * l * (l - mu) - (mu + l),
-            mu ** 2 * l ** 2 + 2 * (l ** 2 - mu ** 2), -(mu ** 3 + l ** 3)}
+    p_L2 = [1, 2 * (mu - l), l ** 2 - 4 * l * mu + mu ** 2, 2 * mu * l * (l - mu) - (mu + l),
+            mu ** 2 * l ** 2 + 2 * (l ** 2 - mu ** 2), -(mu ** 3 + l ** 3)]
     L2roots = np.roots(p_L2)
     # initialize L2 for loop
     L2 = 0
@@ -42,19 +41,22 @@ def lpoints(mu):
         if (L2roots[i] > -mu) & (L2roots[i] > l):
             L2 = L2roots[i]
 
+    if np.iscomplexobj(L2):
+        LP[1, 0] = LP[1, 0] + 0j
     LP[1, 0] = L2
 
 
     # L3
-    p_L3 = {1, 2 * (mu - l), l ** 2 - 4 * mu * l + mu ** 2, 2 * mu * l * (l - mu) + (l + mu),
-            mu ** 2 * l ** 2 + 2 * (mu ** 2 - l ** 2), l ** 3 + mu ** 3}
+    p_L3 = [1, 2 * (mu - l), l ** 2 - 4 * mu * l + mu ** 2, 2 * mu * l * (l - mu) + (l + mu),
+            mu ** 2 * l ** 2 + 2 * (mu ** 2 - l ** 2), l ** 3 + mu ** 3]
     L3roots = np.roots(p_L3)
     # initialize L3 for loop
     L3 = 0
     for i in range(0, 4):
         if L3roots[i] < -mu:
             L3 = L3roots[i]
-
+    if np.iscomplexobj(L2):
+        LP[2, 0] = LP[2, 0] + 0j
     LP[2, 0] = L3
 
 

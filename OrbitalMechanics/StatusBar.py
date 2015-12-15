@@ -1,12 +1,13 @@
 from waitbar import bar
-from crtbpRKN1210 import tEnd, wait
 __author__ = 'Ian'
 
 
 ##########  OutputFcn1:  Status Bar  ####################################
 #
 # the output function
+
 def OutputFcn1(t, y, dy, flag):  # ok
+    global tEnd, wait
     # don't stop
     stop = False
     # only after sucessfull steps
